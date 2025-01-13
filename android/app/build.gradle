@@ -1,0 +1,38 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.internship_task2"
+    compileSdk = 34 // Update to a compatible compileSdk version
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17 // Use Java 17 for compatibility
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17" // Match Java version
+    }
+
+    defaultConfig {
+        applicationId = "com.example.internship_task2"
+        minSdk = 21 // Minimum SDK version
+        targetSdk = 34 // Target the latest SDK version
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
